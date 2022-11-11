@@ -87,7 +87,7 @@ def main():
                 prediction = model.predict(test)
 
                 if prediction < 0:
-                    alert_message = "Please enter relevant information."
+                    alert_message = "-."
                 else:
                     success_message = f'Predicted Insurance Price : $ {numberFormat(prediction[0])}'
                 Insurance_Price = prediction[0]
@@ -97,9 +97,9 @@ def main():
                 db.session.add(entry)
                 db.session.commit()
             else:
-                 alert_message = "Please enter relevant information."
+                 alert_message = "=."
     except:
-        alert_message = "Please enter relevant information."
+        alert_message = ">."
     return render_template('Insurancepriceprediction.html',alert_message = alert_message,success_message = success_message)
 
 
