@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Insurance Price Prediction</title>
+    <style type="text/css">
+        *{
+            margin: 0;
+            padding: 20;
+        }
+        body{
+            background-color: aliceblue ;
+            font-family:  Times New Roman;
+            max-width: 1000px;
+            margin: 150px;
+            margin-top: 10px;
+            height: 50px;
+        }
+        .regform{
+            width: 1200px;
+            height: 30px;
+            background-color: rgb(8, 7, 7);
+            margin: auto;
+            color: #ccffcc;
+            padding: 10px 0px 10px 0px;
+            text-align: center;
+            border-radius: 25px 25px 0 0;
+            text-align: center;
+        }
+        .main{
+            background-color: rgb(0,0,0,0.4);
+            width: 1200px;
+            margin: auto;
+            border-radius:  0 0 15px 15px;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-weight: 200;
+        }
+        .main .formgroup{
+            padding-left: 120px;
+            padding-top: 50px;
+        }
+
+        #FirstName{
+          position: relative;
+          font-size: 16px;
+          margin-right: 10px;
+          border-radius: 2px; 
+        }
+        .FirstName{
+            height: 30px;
+            margin-left: 20px;
+        }
+        #LastName{
+          position: relative;
+          font-size: 16px;
+          margin-right: 10px;
+          border-radius: 2px;
+        }
+        .LastName{
+            height: 30px;
+            margin-left: 20px;
+        }
+        .Predict{
+            background-color: rgb(5, 138, 78);
+            color: rgb(13, 14, 15);
+            width: 150px;
+            height: 40px;
+            border-radius: 10px 10px 10px 10px;
+            text-align: center;
+            margin-bottom: 40px;
+            margin-left: 430px;
+        }
+        .Email{
+            height: 30px;
+            margin-left: 20px;
+        }
+        #Email{
+          position: relative;
+          font-size: 16px;
+          margin-right: 10px;
+          border-radius: 2px;
+        }
+        .Age{
+            height: 30px;
+            margin-left: 20px;
+        }
+        #Age{
+          position: relative;
+          font-size: 16px;
+          margin-right: 20px;
+          border-radius: 2px;
+        }
+        .Gender{
+            height: 30px;
+            margin-left: 20px;
+        }
+        #Gender{
+          position: relative;
+          font-size: 16px;
+          margin-right: 20px;
+          border-radius: 2px;
+        }
+
+        .Children{
+            height: 30px;
+            margin-left: 20px;
+        }
+        #Children{
+          position: relative;
+          font-size: 16px;
+          margin-right: 20px;
+          border-radius: 2px;
+        }
+        .BMI{
+            height: 30px;
+            margin-left: 20px;
+        }
+        #BMI{
+          position: relative;
+          font-size: 16px;
+          margin-right: 20px;
+          border-radius: 2px;
+        }
+        .Smoker{
+            height: 30px;
+            margin-left: 20px;
+        }
+        #Smoker{
+          position: relative;
+          font-size: 16px;
+          margin-right: 20px;
+          border-radius: 2px;
+        }
+        .Region{
+            height: 30px;
+            margin-left: 20px;
+        }
+    
+        #Region{
+          position: relative;
+          font-size: 16px;
+          margin-right: 20px;
+          border-radius: 2px;
+        }
+
+        
+        
+    </style>
+
+</head>    
+    <body>
+        <div class="regform">
+            <h1>Insurance Price Prediction</h1><br><br>
+            {% if alert_message %}
+            <div class="alert alert-danger" style="color:rgb(140, 18, 221);font-size:25px; ">{{ alert_message }}</div>
+           {% endif %}
+
+           {% if success_message %}
+            <div class="alert alert-success" style="color:rgb(140, 18, 221);font-size:25px; ">{{ success_message }}</div>
+           {% endif %}
+        </div>
+        <div></div>
+        <div></div>
+        <div class="main">
+            <form action="/" method="POST" class="formgroup">
+                <h4>Customer Information</h4> <br><br>
+
+                <label class="FirstName" >FirstName</label>
+                    <input type="text" name="FirstName" pattern="[A-Za-z]{1,32}" id="FirstName" placeholder="FirstName" required/>
+                <label class="LastName" >LastName</label>
+                    <input type="text" name="LastName" pattern="[A-Za-z]{1,32}" id="LastName" placeholder="LastName" required/>
+                <label class="Email">Email </label>
+                    <input type="email" pattern="^([a-zA-Z0-9_\-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([a-zA-Z0-9\-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)$" name="Email" id="Email" placeholder="Email" required/>
+                    
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                    
+
+                <label class="Age">Age</label>
+                    <input type="number" name="Age" id="Age" placeholder="Enter Age" min="1" max="120"required/>
+                
+                <label class="Gender">Gender </label>
+                    <select name="Gender"id="Gender" required="required">
+                        <option value="Male">Male</option>
+                        <option value="Female">Female</option>
+                    </select>
+                <label class="Children">Children </label>
+                    <select name="Children" id="Children" required="required">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+
+                <label class="BMI">BMI </label>
+                    <input type="number" name="BMI" id="BMI" placeholder="00.00" pattern="(^[0-9]{0,2}$)|(^[0-9]{0,2}\.[0-9]{0,5}$)" step = "0.01" min="0.1" max="99.99" required/>
+
+
+                <label class="Smoker">Smoker </label>
+                <select name="Smoker"id="Smoker" required="required">
+                    <option value="Yes">Yes</option>
+                    <option value="No">No</option>
+                </select>
+
+                <label class="Region">Region </label>
+                    <select name="Region" id="Region" required="Region">
+                        <option value="Southwest">Southwest</option>
+                        <option value="Northwest">Northwest</option>
+                        <option value="Southeast">Southeast</option>
+                        <option value="Northeast">Northeast</option>
+                    </select>
+
+
+
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+                <button type="submit" id="Predict" class="Predict"> Predict </button>
+    
+            </form>>
+        </div>
+    
+    </body>
+
+</html>
