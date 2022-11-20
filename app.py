@@ -4,7 +4,7 @@ import pickle
 import numpy as np
 import sklearn
 import os
-#currentdirectory = os.path.dirname(os.path.abspath(__file__))
+currentdirectory = os.path.dirname(os.path.abspath(__file__))
 
 app = Flask("__name__")
 model = pickle.load(open('finalized_model.pickle', 'rb'))
