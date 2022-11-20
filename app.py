@@ -99,7 +99,7 @@ def main():
             else:
                  alert_message = "Invalid Data"
     except:
-        alert_message = ""
+        alert_message = "error"
     return render_template('Insurancepriceprediction.html',alert_message = alert_message,success_message = success_message)
 
 
