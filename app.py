@@ -62,25 +62,41 @@ def main():
             Email = request.form["Email"]
             sex = request.form["Gender"]
             if (sex == 'Male'):
-                sex = 1
+                sex_Male = 1
+                sex_Female = 0
             else:
-                sex = 0
+                sex_Male = 0
+                sex_Female = 1
             bmi = float(request.form["BMI"])
             children = int(request.form["Children"])
             smoker = request.form["Smoker"]
             if (smoker == 'Yes'):
-                smoker = 1
+                smoker_Yes = 1
+                smoker_No = 0
             else:
-                smoker = 0
+                smoker_Yes = 0
+                smoker_No = 1
             region = request.form["Region"]
             if (region == "Southwest"):
-                region = 3
+                region_Southwest = 1
+                region_Southeast = 0
+                region_Northwest = 0
+                region_Northeast = 0
             elif(region == "Southeast"):
-                region = 2
+                region_Southwest = 0
+                region_Southeast = 1
+                region_Northwest = 0
+                region_Northeast = 0
             elif(region == "Northwest"):
-                region = 1
+                region_Southwest = 0
+                region_Southeast = 0
+                region_Northwest = 1
+                region_Northeast = 0
             else:
-                region = 0
+                region_Southwest = 0
+                region_Southeast = 0
+                region_Northwest = 0
+                region_Northeast = 1
             test = [[age,bmi,smoker,children,region,sex]]
             if bmi < 100:
 
