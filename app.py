@@ -62,42 +62,42 @@ def main():
             Email = request.form["Email"]
             sex = request.form["Gender"]
             if (sex == 'Male'):
-                sex_Male = 1
-                sex_Female = 0
+                sex_male = 1
+                sex_female = 0
             else:
-                sex_Male = 0
-                sex_Female = 1
+                sex_male = 0
+                sex_female = 1
             bmi = float(request.form["BMI"])
             children = int(request.form["Children"])
             smoker = request.form["Smoker"]
             if (smoker == 'Yes'):
-                smoker_Yes = 1
-                smoker_No = 0
+                smoker_yes = 1
+                smoker_no = 0
             else:
-                smoker_Yes = 0
-                smoker_No = 1
+                smoker_yes = 0
+                smoker_no = 1
             region = request.form["Region"]
             if (region == "Southwest"):
-                region_Southwest = 1
-                region_Southeast = 0
-                region_Northwest = 0
-                region_Northeast = 0
+                region_southwest = 1
+                region_southeast = 0
+                region_northwest = 0
+                region_northeast = 0
             elif(region == "Southeast"):
-                region_Southwest = 0
-                region_Southeast = 1
-                region_Northwest = 0
-                region_Northeast = 0
+                region_southwest = 0
+                region_southeast = 1
+                region_northwest = 0
+                region_northeast = 0
             elif(region == "Northwest"):
-                region_Southwest = 0
-                region_Southeast = 0
-                region_Northwest = 1
-                region_Northeast = 0
+                region_southwest = 0
+                region_southeast = 0
+                region_northwest = 1
+                region_northeast = 0
             else:
-                region_Southwest = 0
-                region_Southeast = 0
-                region_Northwest = 0
-                region_Northeast = 1
-            test = [[age,bmi,smoker_Yes,smoker_No,children,region_Southwest,region_Southeast,region_Northwest,region_Northeast,sex_Male,sex_Female]]
+                region_southwest = 0
+                region_southeast = 0
+                region_northwest = 0
+                region_northeast = 1
+            test = [[age,bmi,children,smoker_no,region_northeast,sex_female,smoker_yes,region_northwest,region_southeast,region_southwest,sex_male]]
             if bmi < 100:
 
                 prediction = model.predict(test)
