@@ -97,7 +97,7 @@ def main():
                 region_Southeast = 0
                 region_Northwest = 0
                 region_Northeast = 1
-            test = [[age,bmi,smoker,children,region,sex]]
+            test = [[age,bmi,smoker_Yes,smoker_No,children,region_Southwest,region_Southeast,region_Northwest,region_Northeast,sex_Male,sex_Female]]
             if bmi < 100:
 
                 prediction = model.predict(test)
