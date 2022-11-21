@@ -8,7 +8,7 @@ currentdirectory = os.path.dirname(os.path.abspath(__file__))
 
 app = Flask("__name__")
 model = pickle.load(open('finalized_model.pickle', 'rb'))
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgres://gnnvrtwaruxbcq:ad379c5cb01b9c8dd0901b8ace60342868c363bcdf5e92e0924b2ffd46adcae9@ec2-54-211-255-161.compute-1.amazonaws.com:5432/d7qbi9ujv83888'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://gnnvrtwaruxbcq:ad379c5cb01b9c8dd0901b8ace60342868c363bcdf5e92e0924b2ffd46adcae9@ec2-54-211-255-161.compute-1.amazonaws.com:5432/d7qbi9ujv83888'
 app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 db = SQLAlchemy(app) #SQLAlchemy is a library that facilitates the communication between Python programs and databases
 
